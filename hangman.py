@@ -110,6 +110,8 @@ while not wordGuessed:
 
     print(' '.join(word_display))
     print()
+    print(f"Guessed letters: {' '.join(guessed_letters)}")
+    print()
     guess = input("Enter a letter: ").lower()
 
     if guess in guessed_letters:
@@ -130,6 +132,6 @@ while not wordGuessed:
     if "_" not in word_display:
         wordGuessed = True
         print("Congratulations! You guessed the word!")
-    elif incorrect_guesses == len(HANGMAN_PICS):
+    elif incorrect_guesses == (len(HANGMAN_PICS) - 1):
         wordGuessed = True
         print(f"Sorry, you have run out of guesses. The word was {random_word}.")
